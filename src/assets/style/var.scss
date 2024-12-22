@@ -1,0 +1,111 @@
+// Variables
+$color-dark-gray: #3F3F46;
+$color-yellow-light: #FFCD31;
+$color-orange-light: #F8A600;
+$color-orange-dark: #F19300;
+$color-darkest-gray: #27272A;
+$color-gray-light: #A1A1AA;
+$color-red: #FF5131;
+$color-gray-mid: #71717A;
+$color-gray-dark: #52525B;
+$color-off-white: #F4F4F5;
+$color-gray-lighter: #E4E4E7;
+$white:#fff;
+
+// Classes for Background Colors
+.bg-dark-gray {
+    background-color: $color-dark-gray;
+}
+
+.bg-yellow-light {
+    background-color: $color-yellow-light;
+}
+
+.bg-orange-light {
+    background-color: $color-orange-light;
+}
+
+.bg-orange-dark {
+    background-color: $color-orange-dark;
+}
+
+.bg-darkest-gray {
+    background-color: $color-darkest-gray;
+}
+
+.bg-gray-light {
+    background-color: $color-gray-light;
+}
+
+.bg-red {
+    background-color: $color-red;
+}
+
+.bg-gray-mid {
+    background-color: $color-gray-mid;
+}
+
+.bg-gray-dark {
+    background-color: $color-gray-dark;
+}
+
+.bg-off-white {
+    background-color: $color-off-white;
+}
+
+.bg-gray-lighter {
+    background-color: $color-gray-lighter;
+}
+
+.bg-off-white {
+    background: $white;
+}
+
+// Classes for Text Colors
+.text-dark-gray {
+    color: $color-dark-gray;
+}
+
+.text-yellow-light {
+    color: $color-yellow-light;
+}
+
+.text-orange-light {
+    color: $color-orange-light;
+}
+
+.text-orange-dark {
+    color: $color-orange-dark;
+}
+
+.text-darkest-gray {
+    color: $color-darkest-gray;
+}
+
+.text-gray-light {
+    color: $color-gray-light;
+}
+
+.text-red {
+    color: $color-red;
+}
+
+.text-gray-mid {
+    color: $color-gray-mid;
+}
+
+.text-gray-dark {
+    color: $color-gray-dark;
+}
+
+.text-off-white {
+    color: $color-off-white;
+}
+
+.text-gray-lighter {
+    color: $color-gray-lighter;
+}
+
+.text-white {
+    color: $white;
+}
