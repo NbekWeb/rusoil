@@ -20,6 +20,8 @@ a {
     padding: 0 32px;
 }
 
+
+
 .btn {
     transition: ease .1s;
 
@@ -44,6 +46,10 @@ a {
 }
 
 .w-full {
+    width: 100%;
+}
+
+.max-w-full {
     width: 100%;
 }
 
@@ -76,6 +82,36 @@ input {
     -webkit-line-clamp: 1;
     line-clamp: 1;
     -webkit-box-orient: vertical;
+}
+
+.tr-scrollbar::-webkit-scrollbar {
+    height: 4px;
+}
+
+.tr-scrollbar::-webkit-scrollbar-thumb {
+    background-color: transparent !important;
+}
+
+.tr-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: $color-yellow-light !important;
+    border-radius: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background-color: $color-yellow-100;
+    border-radius: 6px;
+}
+
+.max-w-max {
+    max-width: max-content;
 }
 
 .bor {

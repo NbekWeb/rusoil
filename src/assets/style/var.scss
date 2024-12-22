@@ -1,6 +1,7 @@
 // Variables
 $color-dark-gray: #3F3F46;
 $color-yellow-light: #FFCD31;
+$color-yellow-100: #FFF5C2;
 $color-orange-light: #F8A600;
 $color-orange-dark: #F19300;
 $color-darkest-gray: #27272A;
@@ -57,7 +58,7 @@ $white:#fff;
     background-color: $color-gray-lighter;
 }
 
-.bg-off-white {
+.bg-white {
     background: $white;
 }
 
@@ -71,7 +72,7 @@ $white:#fff;
 }
 
 .text-orange-light {
-    color: $color-orange-light;
+    color: $color-orange-light !important;
 }
 
 .text-orange-dark {

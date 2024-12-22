@@ -39,7 +39,7 @@ const links = [
     <template v-for="(link, i) of links" :key="i">
       <router-link
         :to="'/' + link?.to"
-        class="link flex-col gap-0 flex items-center relative "
+        class="link flex-col gap-0 flex items-center relative"
       >
         <span>
           <span
@@ -62,13 +62,14 @@ const links = [
 .link {
   width: 100px;
   padding: 6px 0;
+
   .coin {
     padding: 2px 6px;
   }
-
   color: $white;
   &:hover {
     span {
+      transition: all ease 0.3s;
       color: $white;
     }
   }

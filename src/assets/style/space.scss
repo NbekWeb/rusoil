@@ -1,19 +1,76 @@
-.gap-0 {
-    gap: 0;
-}
+@for $i from 0 through 10 {
+    .gap-#{$i} {
+        gap: $i * 4px; // Each step increases by 4px
+    }
 
-.gap-1 {
-    gap: 4px;
-}
+    // Padding classes
+    .pt-#{$i} {
+        padding-top: $i * 4px;
+    }
 
-.gap-2 {
-    gap: 8px;
-}
+    .pb-#{$i} {
+        padding-bottom: $i * 4px;
+    }
 
-.gap-6 {
-    gap: 24px;
-}
+    .px-#{$i} {
+        padding-left: $i * 4px;
+        padding-right: $i * 4px;
+    }
 
-.px-2 {
-    padding: 0 18px;
+    .py-#{$i} {
+        padding-top: $i * 4px;
+        padding-bottom: $i * 4px;
+    }
+
+    .p-#{$i} {
+        padding: $i * 4px;
+    }
+
+    // Margin classes
+    .mt-#{$i} {
+        margin-top: $i * 4px;
+    }
+
+    .mb-#{$i} {
+        margin-bottom: $i * 4px;
+    }
+
+    .ml-#{$i} {
+        margin-left: $i * 4px;
+    }
+
+    .mr-#{$i} {
+        margin-right: $i * 4px;
+    }
+
+    .mx-#{$i} {
+        margin-left: $i * 4px;
+        margin-right: $i * 4px;
+    }
+
+    .my-#{$i} {
+        margin-top: $i * 4px;
+        margin-bottom: $i * 4px;
+    }
+
+    .m-#{$i} {
+        margin: $i * 4px;
+    }
+
+    // Top, right, bottom, left position classes
+    .top-#{$i} {
+        top: $i * 4px;
+    }
+
+    .bottom-#{$i} {
+        bottom: $i * 4px;
+    }
+
+    .left-#{$i} {
+        left: $i * 4px;
+    }
+
+    .right-#{$i} {
+        right: $i * 4px;
+    }
 }
