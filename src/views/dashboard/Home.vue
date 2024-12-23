@@ -1,11 +1,18 @@
-<script setup></script>
+<script setup>
+import Catalog from "@/components/home/catalog.vue";
+import Aksi from "@/components/home/aksi.vue";
+import News from "@/components/home/news.vue";
+</script>
 <template>
-  <div class="home custom-scrollbar px-8 py-7 w-full">
-    <img src="@/assets/img/banner.png" class="w-full" />
+  <div class="">
+    <div class="px-8 py-7 border-b border-off-white">
+      <img src="@/assets/img/banner.png" class="w-full" />
+    </div>
+    <catalog />
+    <aksi />
+    <news />
   </div>
 </template>
 <style scoped lang="scss">
-.home {
-  overflow-y: auto;
-}
+@import "@/assets/style/var.scss";
 </style>

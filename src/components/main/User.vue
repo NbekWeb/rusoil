@@ -1,10 +1,17 @@
-<script setup></script>
+<script setup>
+import { RouterLink } from "vue-router";
+</script>
 <template>
-  <span class="flex h-full rounded-full items-center justify-center"> A </span>
+  <router-link
+    :to="{ name: 'myAccount' }"
+    class="flex h-full myAccount rounded-full items-center justify-center"
+  >
+    A
+  </router-link>
 </template>
 <style scoped lang="scss">
 @import "@/assets/style/var.scss";
-span {
+.myAccount {
   min-width: 56px;
   color: $white;
   background: $color-gray-dark;

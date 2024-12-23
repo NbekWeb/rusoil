@@ -1,21 +1,62 @@
 // Variables
 $color-dark-gray: #3F3F46;
 $color-yellow-light: #FFCD31;
+$color-yellow-link: #FF7700;
 $color-yellow-100: #FFF5C2;
+$color-green-500: #22C55E;
 $color-orange-light: #F8A600;
 $color-orange-dark: #F19300;
 $color-darkest-gray: #27272A;
 $color-gray-light: #A1A1AA;
+$color-gray-600: #52525B;
+$color-gray-900: #52525B;
+$color-gray-6b: #6B7280;
+$color-gray-f1: #F1F2F4;
+$color-gray-500: #71717A;
+$color-gray-f7: #F7F7F7;
+$color-gray-29: rgba(41, 42, 41, 0.5);
 $color-red: #FF5131;
 $color-gray-mid: #71717A;
+$color-gray-eb: #EBEBEB;
 $color-gray-dark: #52525B;
+$color-gray-50: #FAFAFA;
 $color-off-white: #F4F4F5;
 $color-gray-lighter: #E4E4E7;
 $white:#fff;
+$black:#000;
+$color-yellow-700:#723711B2;
 
-// Classes for Background Colors
+
+
 .bg-dark-gray {
     background-color: $color-dark-gray;
+}
+
+.bg-green-500 {
+    background: $color-green-500;
+}
+
+.bg-gray-600 {
+    background-color: $color-gray-600;
+}
+
+.bg-gray-500 {
+    background-color: $color-gray-500;
+
+}
+
+.bg-gray-f7 {
+    background-color: $color-gray-f7;
+
+}
+
+.bg-gray-f1 {
+    background: $color-gray-f1;
+}
+
+
+.bg-gray-50 {
+    background: $color-gray-50;
 }
 
 .bg-yellow-light {
@@ -79,12 +120,39 @@ $white:#fff;
     color: $color-orange-dark;
 }
 
+.text-black {
+    color: $black;
+}
+
+.text-gray-29 {
+    color: $color-gray-29;
+
+}
+
+.text-gray-6b {
+    color: $color-gray-6b;
+
+}
+
+.text-yellow-700 {
+    color: $color-yellow-700;
+}
+
 .text-darkest-gray {
     color: $color-darkest-gray;
 }
 
+.text-gray-900 {
+    color: $color-gray-900;
+}
+
 .text-gray-light {
     color: $color-gray-light;
+}
+
+
+.text-green-500 {
+    color: $color-green-500;
 }
 
 .text-red {
@@ -109,4 +177,16 @@ $white:#fff;
 
 .text-white {
     color: $white;
+}
+
+.border-off-white {
+    border-color: $color-off-white;
+}
+
+.inp {
+    border-color: $color-gray-lighter;
+
+    &:hover {
+        border-color: $color-yellow-light;
+    }
 }

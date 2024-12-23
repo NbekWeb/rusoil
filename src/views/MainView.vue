@@ -8,7 +8,9 @@ import Menu from "@/components/main/Menu.vue";
     <Top />
     <div class="w-full flex gap-0 body-main-view">
       <Menu />
-      <RouterView />
+      <div class="custom-scrollbar wrapper">
+        <RouterView />
+      </div>
     </div>
   </div>
 </template>
@@ -18,6 +20,10 @@ import Menu from "@/components/main/Menu.vue";
   overflow-y: hidden;
   .body-main-view {
     height: calc(100vh - 80px);
+    .wrapper {
+      overflow-y: auto;
+      flex-grow: 1;
+    }
   }
 }
 </style>

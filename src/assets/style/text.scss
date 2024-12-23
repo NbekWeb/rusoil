@@ -1,3 +1,7 @@
+.font-normal {
+    font-weight: 400;
+}
+
 .font-medium {
     font-weight: 500;
 }
@@ -6,7 +10,7 @@
     font-weight: 600;
 }
 
-.font-bold{
+.font-bold {
     font-weight: 700;
 }
 
@@ -25,6 +29,19 @@
     line-height: 24px;
 }
 
+.text-xl {
+    font-size: 20px;
+}
+
 .text-2xl {
     font-size: 24px;
+}
+
+.line-through {
+    text-decoration-line: line-through;
+}
+
+.text-underline {
+    text-underline-offset: 1px;
+    text-decoration: underline;
 }

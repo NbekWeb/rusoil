@@ -1,4 +1,4 @@
-@for $i from 0 through 10 {
+@for $i from 0 through 20 {
     .gap-#{$i} {
         gap: $i * 4px; // Each step increases by 4px
     }
@@ -10,6 +10,14 @@
 
     .pb-#{$i} {
         padding-bottom: $i * 4px;
+    }
+
+    .pl-#{$i} {
+        padding-left: $i * 4px;
+    }
+
+    .pr-#{$i} {
+        padding-right: $i * 4px;
     }
 
     .px-#{$i} {
@@ -73,4 +81,17 @@
     .right-#{$i} {
         right: $i * 4px;
     }
+
+    .w-#{$i} {
+        width: $i*4px;
+    }
+
+    .min-w-#{$i} {
+        min-width: $i*4px;
+    }
+
+    .h-#{$i} {
+        height: $i*4px !important;
+    }
+
 }

@@ -162,6 +162,7 @@ const adding = [
 .menu-bar {
   padding: 24px 12px;
   width: 320px;
+  min-width: 320px;
   
   border-right: 1px solid $color-off-white;
   .main-menu-bar {
