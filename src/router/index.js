@@ -79,7 +79,11 @@ const router = createRouter({
           path: 'aksi',
           component: () => import('../views/dashboard/Aksi.vue'),
           name: 'aksi',
-        }
+        }, {
+          path: 'aksi-item',
+          component: () => import('../views/dashboard/AksiItem.vue'),
+          name: 'aksiItem',
+        },
 
 
       ]

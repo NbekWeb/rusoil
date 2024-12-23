@@ -333,7 +333,4 @@ const links = [
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.min-w-500 {
-  min-width: 500px;
-}
 </style>

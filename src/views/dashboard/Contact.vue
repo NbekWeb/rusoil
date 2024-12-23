@@ -260,8 +260,10 @@ const links = [
           </div>
         </div>
       </div>
-      <div class="py-8 flex flex-col gap-4 min-w-500 ">
-        <div class="text-xl font-semibold flex justify-between items-center pr-6">
+      <div class="py-8 flex flex-col gap-4 min-w-500">
+        <div
+          class="text-xl font-semibold flex justify-between items-center pr-6"
+        >
           Об организации
           <icon type="pen" class="text-2xl opacity-50" />
         </div>
@@ -331,9 +333,5 @@ const links = [
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.min-w-500 {
-  min-width: 500px;
 }
 </style>

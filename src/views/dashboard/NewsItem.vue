@@ -164,7 +164,4 @@ const goBack = () => {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
-.min-w-500 {
-  min-width: 500px;
-}
 </style>
