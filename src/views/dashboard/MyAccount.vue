@@ -19,7 +19,7 @@ const links = [
       <link-items :links="links" />
       <h2 class="text-2xl pt-5 pb-6 font-semibold">Мой аккаунт</h2>
     </div>
-    <div class="flex w-full">
+    <div class="flex w-full gap-6">
       <div class="p-8 flex-grow">
         <div class="pb-8 flex justify-between">
           <span class="text-2xl font-semibold"> Договоры </span>
