@@ -2,17 +2,23 @@
 import LinkItems from "@/components/usefull/LinkItems.vue";
 import Icon from "@/components/icons/Icon.vue";
 import pagination from "@/components/usefull/pagination.vue";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const links = [
   {
     name: "Главная",
     to: "home",
   },
   {
-    name: " Новости",
+    name: "Новости",
     to: "news",
   },
 ];
+
+const goItem = () => {
+  router.push({ name: "newsItem" });
+};
 </script>
 <template>
   <div class="text-darkest-gray text-base gap-6">
@@ -21,7 +27,12 @@ const links = [
       <h2 class="text-2xl pt-5 pb-6 font-semibold">Новости</h2>
     </div>
     <div class="grid-4 gap-6 px-8">
-      <div class="item point flex flex-col gap-3" v-for="i of 16" :key="i">
+      <div
+        @click="goItem"
+        class="item point flex flex-col gap-3"
+        v-for="i of 16"
+        :key="i"
+      >
         <img src="@/assets/img/news1.jpg" class="rounded-sm w-full" />
         <div class="flex flex-col gap-2">
           <span class=""> 2 апреля 2024 </span>

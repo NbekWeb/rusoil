@@ -71,6 +71,11 @@ const router = createRouter({
           name: 'news',
         },
         {
+          path: 'news-item',
+          component: () => import('../views/dashboard/NewsItem.vue'),
+          name: 'newsItem',
+        },
+        {
           path: 'aksi',
           component: () => import('../views/dashboard/Aksi.vue'),
           name: 'aksi',
