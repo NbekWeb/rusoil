@@ -46,6 +46,9 @@ const aksi = [
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   .item {
+    img {
+      aspect-ratio: 1 / 1;
+    }
     transition: 0.3s ease;
     &:hover {
       color: $color-yellow-link;

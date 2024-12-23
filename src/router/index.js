@@ -59,8 +59,22 @@ const router = createRouter({
           path: 'my-account',
           component: () => import('../views/dashboard/MyAccount.vue'),
           name: 'myAccount',
+        },
+        {
+          path: 'contact',
+          component: () => import('../views/dashboard/Contact.vue'),
+          name: 'contact',
+        },
+        {
+          path: 'news',
+          component: () => import('../views/dashboard/News.vue'),
+          name: 'news',
+        },
+        {
+          path: 'aksi',
+          component: () => import('../views/dashboard/Aksi.vue'),
+          name: 'aksi',
         }
-
 
 
       ]
