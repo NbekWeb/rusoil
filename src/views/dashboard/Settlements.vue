@@ -261,14 +261,9 @@ const items = [
   border-color: $color-red;
 }
 
-.grid-6 {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-}
+
 .grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  .grid-item {
+ .grid-item {
     background: $color-gray-50;
     .large-icon {
       font-size: 48px;

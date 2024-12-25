@@ -42,25 +42,7 @@ const change = (i) => {
         </span>
       </div>
 
-      <div class="p-1 flex bg-off-white rounded-sm">
-        <div
-          @click="change(-1)"
-          class="w-10 h-10 rounded-8 bg-white point adding flex text-2xl items-center justify-center"
-        >
-          <Icon type="minus" />
-        </div>
-        <div
-          class="h-10 w-14 flex items-center justify-center text-base font-semibold"
-        >
-          {{ count }}
-        </div>
-        <div
-          @click="change(1)"
-          class="w-10 h-10 rounded-8 bg-white point adding flex text-2xl items-center justify-center"
-        >
-          <Icon type="plus" />
-        </div>
-      </div>
+      <Count />
       <Icon type="delete" class="text-gray-light text-2xl point" />
     </div>
   </div>

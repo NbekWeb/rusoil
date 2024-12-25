@@ -23,7 +23,7 @@ defineProps({
 </script>
 <template>
   <div
-    class="p-3 justify-between text-base border-b border-off-white flex text-darkest-gray"
+    class="p-3 point justify-between text-base border-b border-off-white flex text-darkest-gray"
   >
     <img src="@/assets/img/moto.png" class="w-12" />
     <div class="flex flex-col gap-1">
@@ -62,36 +62,18 @@ defineProps({
       <span class="text-gray-light line-through">140.11 ₽</span>
     </div>
     <div class="flex gap-2">
-      <div class="p-1 flex bg-off-white rounded-sm">
-        <div
-          @click="change(-1)"
-          class="w-10 h-10 rounded-8 bg-white point adding flex text-2xl items-center justify-center"
-        >
-          <Icon type="minus" />
-        </div>
-        <div
-          class="h-10 w-14 flex items-center justify-center text-base font-semibold"
-        >
-          {{ count }}
-        </div>
-        <div
-          @click="change(1)"
-          class="w-10 h-10 rounded-8 bg-white point adding flex text-2xl items-center justify-center"
-        >
-          <Icon type="plus" />
-        </div>
-      </div>
+      <Count/>
       <div
         :class="[
           'rounded-sm point w-12 h-12 text-2xl flex items-center justify-center',
           basket ? 'bg-yellow-light' : ' check',
         ]"
-        @click="tobasket"
+        @click.stop="tobasket"
       >
         <Icon :type="basket ? 'order' : 'check'" />
       </div>
       <Icon
-        @click="toLike"
+        @click.stop="toLike"
         :class="['point text-2xl', like ? ' text-red' : 'text-gray-light']"
         :type="like ? 'heart-red' : 'heart'"
       />
@@ -105,16 +87,7 @@ defineProps({
   padding: 4px 6px;
 }
 
-.adding {
-  span {
-    opacity: 40%;
-  }
-  &:hover {
-    span {
-      opacity: 100%;
-    }
-  }
-}
+
 
 .check {
   border: 1px solid $color-yellow-light;

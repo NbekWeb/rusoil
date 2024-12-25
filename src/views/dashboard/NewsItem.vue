@@ -160,8 +160,5 @@ const goBack = () => {
   }
 }
 
-.grid-5 {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-}
+
 </style>

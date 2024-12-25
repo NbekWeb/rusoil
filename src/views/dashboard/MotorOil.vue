@@ -1,11 +1,13 @@
 <script setup>
-import { RouterLink } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 import { ref, onMounted, onUnmounted } from "vue";
 import Icon from "@/components/icons/Icon.vue";
 import LinkItems from "@/components/usefull/LinkItems.vue";
 import Fill from "@/components/motor-oil/Fill.vue";
 import Pagination from "@/components/usefull/pagination.vue";
 import Filtr from "@/components/motor-oil/Filtr.vue";
+
+const router = useRouter();
 const open = ref(false);
 
 const type = ref("table_fill");
@@ -24,6 +26,10 @@ const handleClickOutside = (event) => {
   if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
     open.value = false;
   }
+};
+
+const goItem = () => {
+  router.push({ name: "item" });
 };
 
 onMounted(() => {
@@ -130,10 +136,10 @@ const links = [
           </div>
         </div>
         <div :class="['mt-6', type == 'grid_fill' && 'grid-4 gap-6 ']">
-          <fill type="aksi" :name="type" />
-          <fill :name="type" />
-          <fill type="new" :name="type" />
-          <fill v-for="i of 10" :key="i" :name="type" />
+          <fill type="aksi" :name="type" @click="goItem" />
+          <fill :name="type" @click="goItem" />
+          <fill type="new" :name="type" @click="goItem" />
+          <fill v-for="i of 10" :key="i" :name="type" @click="goItem" />
         </div>
         <div class="mt-10 flex justify-between">
           <div class="point inp border rounded-sm py-3 px-4 text-base">
@@ -179,8 +185,5 @@ const links = [
     border-radius: 40px;
   }
 }
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
+
 </style>

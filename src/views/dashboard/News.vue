@@ -69,8 +69,5 @@ const goItem = () => {
   }
 }
 
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
+
 </style>

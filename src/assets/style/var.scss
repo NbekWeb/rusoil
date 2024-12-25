@@ -186,7 +186,7 @@ $color-yellow-700:#723711B2;
 .inp {
     border-color: $color-gray-lighter;
 
-    &:hover {
-        border-color: $color-yellow-light;
-    }
+}
+.inp:hover {
+    border-color: $color-yellow-light;
 }

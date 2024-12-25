@@ -37,6 +37,11 @@ const router = createRouter({
           component: () => import('../views/dashboard/MotorOil.vue'),
           name: 'motorOil'
         },
+        {
+          path: 'lubricants/card-item',
+          component: () => import('../views/dashboard/CardItem.vue'),
+          name: 'item'
+        },
 
         {
           path: 'settlements',

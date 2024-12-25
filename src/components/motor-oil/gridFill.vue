@@ -1,20 +1,12 @@
 <script setup>
 import Icon from "../icons/Icon.vue";
+import Count from "../usefull/Count.vue";
 
-import { ref } from "vue";
-
-const count = ref(1);
 const basket = ref(false);
 const like = ref(false);
 
 const tobasket = () => (basket.value = !basket.value);
 const toLike = () => (like.value = !like.value);
-
-const change = (i) => {
-  if (count.value + i > 0) {
-    count.value = count.value + i;
-  }
-};
 
 defineProps({
   type: String,
@@ -23,7 +15,7 @@ defineProps({
 </script>
 <template>
   <div
-    class="p-3 rounded-sm bor gap-2 flex-col flex text-darkest-gray border-off-white"
+    class="p-3 point rounded-sm bor gap-2 flex-col flex text-darkest-gray border-off-white"
   >
     <div class="relative bg-white">
       <div class="text-white absolute top-0 left-0">
@@ -41,7 +33,7 @@ defineProps({
         </span>
       </div>
       <Icon
-        @click="toLike"
+        @click.stop="toLike"
         :class="[
           'point absolute top-0 right-0 justify-end text-2xl',
           like ? ' text-red' : 'text-gray-light',
@@ -72,31 +64,13 @@ defineProps({
       </div>
 
       <div class="flex gap-2">
-        <div class="p-1 flex bg-off-white rounded-sm">
-          <div
-            @click="change(-1)"
-            class="w-10 h-10 rounded-8 bg-white point adding flex text-2xl items-center justify-center"
-          >
-            <Icon type="minus" />
-          </div>
-          <div
-            class="h-10 w-14 flex items-center justify-center text-base font-semibold"
-          >
-            {{ count }}
-          </div>
-          <div
-            @click="change(1)"
-            class="w-10 h-10 rounded-8 bg-white point adding flex text-2xl items-center justify-center"
-          >
-            <Icon type="plus" />
-          </div>
-        </div>
+        <Count />
         <div
           :class="[
             'rounded-sm point w-12 h-12 text-2xl flex items-center justify-center',
             basket ? 'bg-yellow-light' : ' check',
           ]"
-          @click="tobasket"
+          @click.stop="tobasket"
         >
           <Icon :type="basket ? 'order' : 'check'" />
         </div>

@@ -180,14 +180,9 @@ const heads = ["Название", "Кол-во", "Цена за ед.", "Сум
 .rounded-b-sm {
   border-radius: 0 0 12px 12px;
 }
-.grid-6 {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-}
+
 .grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  .grid-item {
+   .grid-item {
     background: $color-gray-50;
     .large-icon {
       font-size: 48px;
@@ -202,10 +197,7 @@ const heads = ["Название", "Кол-во", "Цена за ед.", "Сум
   }
 }
 
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
+
 
 th {
   font-weight: 400;
