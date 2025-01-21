@@ -54,6 +54,9 @@ const news = [
 .catalog {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
+  @media only screen and (max-width: 1024px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .item {
     img {
       aspect-ratio: 1 / 1;
@@ -64,6 +67,36 @@ const news = [
         color: $color-yellow-link;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .text-2xl {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .pb-6,
+  .pb-8 {
+    padding-bottom: 16px;
+  }
+  .pt-6 {
+    padding-top: 16px;
+  }
+  .gap-6 {
+    gap: 16px;
+  }
+  .gap-3 {
+    gap: 6px;
+  }
+  .pb-9 {
+    padding-bottom: 16px;
+  }
+  .text-base {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .pb-3{
+    padding-bottom: 0px;
   }
 }
 </style>

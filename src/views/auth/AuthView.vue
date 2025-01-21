@@ -33,7 +33,7 @@ const route = useRoute();
 
         <router-view />
       </div>
-      <div class="flex-grow flex flex-col">
+      <div class="flex-grow flex flex-col right-part">
         <div class="py-6 flex items-center justify-between">
           <img src="@/assets/img/logo.png" class="h-12" />
           <div class="flex items-center gap-8">
@@ -102,6 +102,25 @@ const route = useRoute();
     .btn:hover {
       opacity: 80%;
     }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .right-part {
+    display: none;
+  }
+  .auth-view.p-6 {
+    padding: 0;
+    .login {
+      border-radius: 0;
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .px-20 {
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }
 </style>

@@ -6,6 +6,7 @@ import img4 from "@/assets/img/04.png";
 import img5 from "@/assets/img/05.png";
 import img6 from "@/assets/img/06.png";
 import img7 from "@/assets/img/07.png";
+import img8 from "@/assets/img/08.png";
 const catalogs = [
   {
     name: "Смазочные материалы",
@@ -35,6 +36,10 @@ const catalogs = [
     name: "Шины и диски",
     img: img7,
   },
+  {
+    name: "Распродажа",
+    img: img8,
+  },
 ];
 </script>
 
@@ -58,12 +63,45 @@ const catalogs = [
 
 .catalog {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  @media only screen and (max-width: 1480px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  @media only screen and (max-width: 640px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .bg-gray-50 {
     transition: 0.3s ease;
     &:hover {
       background: $color-gray-lighter;
     }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .text-2xl {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .pb-6,
+  .pb-8 {
+    padding-bottom: 16px;
+  }
+  .pt-6 {
+    padding-top: 16px;
+  }
+  .p-5 {
+    padding: 12px;
+  }
+  .w-12 {
+    width: 36px;
+  }
+  .gap-11 {
+    gap: 20px;
+  }
+  .text-base {
+    font-size: 14px;
+    line-height: 16px;
   }
 }
 </style>

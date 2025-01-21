@@ -134,6 +134,11 @@ $color-yellow-700:#723711B2;
 
 }
 
+.text-gray-500 {
+    color: $color-gray-500;
+
+}
+
 .text-yellow-700 {
     color: $color-yellow-700;
 }
@@ -187,6 +192,7 @@ $color-yellow-700:#723711B2;
     border-color: $color-gray-lighter;
 
 }
+
 .inp:hover {
     border-color: $color-yellow-light;
 }

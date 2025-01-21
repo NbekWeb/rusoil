@@ -11,7 +11,7 @@ defineProps({
 </script>
 <template>
   <router-link
-    :to="'/' + to"
+    :to="{ name: to }"
     :class="[
       'flex items-center text-darkest-gray gap-2 rounded-sm p-3 point  menu-item',
       { 'bg-off-white ': selected },

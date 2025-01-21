@@ -77,6 +77,36 @@ const router = createRouter({
           name: 'news',
         },
         {
+          path: 'services',
+          component: () => import('../views/dashboard/News.vue'),
+          name: 'services',
+        },
+        {
+          path: 'bonus',
+          component: () => import('../views/dashboard/News.vue'),
+          name: 'bonus',
+        },
+        {
+          path: 'msg',
+          component: () => import('../views/dashboard/News.vue'),
+          name: 'msg',
+        },
+        {
+          path: 'favorite',
+          component: () => import('../views/dashboard/News.vue'),
+          name: 'favorite',
+        },
+        {
+          path: 'bonusApp',
+          component: () => import('../views/dashboard/News.vue'),
+          name: 'bonusApp',
+        },
+        {
+          path: 'help',
+          component: () => import('../views/dashboard/News.vue'),
+          name: 'help',
+        },
+        {
           path: 'news-item',
           component: () => import('../views/dashboard/NewsItem.vue'),
           name: 'newsItem',

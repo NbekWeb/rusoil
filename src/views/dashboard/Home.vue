@@ -15,4 +15,12 @@ import News from "@/components/home/news.vue";
 </template>
 <style scoped lang="scss">
 @import "@/assets/style/var.scss";
+
+@media only screen and (max-width: 640px) {
+  .py-7 {
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+ 
+}
 </style>

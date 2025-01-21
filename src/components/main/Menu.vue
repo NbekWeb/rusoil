@@ -16,7 +16,7 @@ const route = useRoute();
 const mainMenu = [
   {
     name: "Главная",
-    to: "",
+    to: "home",
     icon: "home",
   },
   {
@@ -26,7 +26,7 @@ const mainMenu = [
   },
   {
     name: "Прайс-лист",
-    to: "price-list",
+    to: "priceList",
     icon: "rubl",
   },
   {
@@ -77,7 +77,7 @@ const personal = [
 const adding = [
   {
     name: "Бонусная программа",
-    to: "bonus-app",
+    to: "bonusApp",
     icon: "coin-c",
   },
   {
@@ -163,7 +163,9 @@ const adding = [
   padding: 24px 12px;
   width: 320px;
   min-width: 320px;
-  
+  @media only screen and (max-width: 1024px) {
+    display: none;
+  }
   border-right: 1px solid $color-off-white;
   .main-menu-bar {
     overflow-x: auto;

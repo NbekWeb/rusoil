@@ -13,6 +13,7 @@ import { RouterLink } from "vue-router";
 @import "@/assets/style/var.scss";
 .myAccount {
   min-width: 56px;
+  max-height: 56px;
   color: $white;
   background: $color-gray-dark;
   border: 2px solid $color-gray-mid;

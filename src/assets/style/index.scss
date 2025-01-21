@@ -13,7 +13,8 @@
     outline: none;
 
 }
-table{
+
+table {
     border-spacing: 0;
 }
 
@@ -165,6 +166,10 @@ input {
     transform: rotate(-90deg);
 }
 
+.opacity-0 {
+    opacity: 0;
+}
+
 .opacity-10 {
     opacity: 10%;
 }
@@ -203,4 +208,11 @@ input {
 
 .bor {
     border: 1px solid red;
+}
+
+@media only screen and (max-width: 640px) {
+    .px-8 {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
