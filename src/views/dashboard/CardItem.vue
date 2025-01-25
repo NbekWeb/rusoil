@@ -101,4 +101,5 @@ const changeSelected = (name) => {
     background: rgba($color: $color-yellow-light, $alpha: 0.7);
   }
 }
+
 </style>

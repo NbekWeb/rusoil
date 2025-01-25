@@ -216,3 +216,37 @@ input {
         padding-right: 16px;
     }
 }
+
+.main-modal {
+    .p-3 {
+        padding: 8px 0;
+        margin-right: 10px;
+    }
+
+    .switch {
+        width: 40px !important;
+        height: 24px !important;
+    }
+
+    .slider::before {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .slider.round {
+        border-radius: 24px !important;
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(16px)  !important;
+        -ms-transform: translateX(16px)  !important;
+        transform: translateX(16px)  !important;
+    }
+    .text-base{
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .rounded-sm {
+        border-radius: 6px;
+    }
+}

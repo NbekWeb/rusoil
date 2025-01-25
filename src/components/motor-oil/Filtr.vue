@@ -58,7 +58,7 @@ const brends = [
       />
     </div>
 
-    <div class="flex flex-col gap-0" v-show="showCategory">
+    <div class="flex flex-col gap-1" v-show="showCategory">
       <div
         :class="[
           'item rounded-sm point',
@@ -174,7 +174,9 @@ const brends = [
 }
 
 .filtr-wrap {
+  min-width: 340px;
   width: 340px;
+
 }
 
 .item {
@@ -187,4 +189,6 @@ const brends = [
     padding: 6px 12px;
   }
 }
+
+
 </style>

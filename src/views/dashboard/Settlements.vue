@@ -290,4 +290,9 @@ th {
 .bg-red-8 {
   background: rgba($color: $color-red, $alpha: 0.08);
 }
+@media only screen and (max-width: 1280px) {
+  .pt-5.pb-6 {
+    padding-bottom: 0;
+  }
+}
 </style>

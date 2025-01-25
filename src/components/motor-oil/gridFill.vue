@@ -1,7 +1,7 @@
 <script setup>
 import Icon from "../icons/Icon.vue";
 import Count from "../usefull/Count.vue";
-
+import { ref } from "vue";
 const basket = ref(false);
 const like = ref(false);
 

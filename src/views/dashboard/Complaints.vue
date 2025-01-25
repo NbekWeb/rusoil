@@ -269,7 +269,11 @@ const links = [
 }
 
 
-
+@media only screen and (max-width: 1280px) {
+  .pb-6 {
+    padding-bottom: 0;
+  }
+}
 
 
 .warn {

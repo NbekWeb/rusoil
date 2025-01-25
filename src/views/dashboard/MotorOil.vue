@@ -6,11 +6,17 @@ import LinkItems from "@/components/usefull/LinkItems.vue";
 import Fill from "@/components/motor-oil/Fill.vue";
 import Pagination from "@/components/usefull/pagination.vue";
 import Filtr from "@/components/motor-oil/Filtr.vue";
+import { useModalStore } from "@/stores/modal";
 
 const router = useRouter();
-const open = ref(false);
+const modalStore = useModalStore();
 
+const open = ref(false);
 const type = ref("table_fill");
+
+const modal = (val) => {
+  modalStore.openModal(val,'Фильтры');
+};
 
 const selectType = (name) => {
   type.value = name;
@@ -78,14 +84,27 @@ const links = [
             </span>
             <ul
               v-if="open"
-              class="absolute w-full mt-2 rounded-sm py-3 px-2 flex flex-col gap-2"
+              class="absolute bg-white z-10 w-full mt-2 rounded-sm py-3 px-2 flex flex-col gap-2"
             >
-              <li class="px-2 rounded-sm py-2">Популярные</li>
-              <li class="px-2 rounded-sm py-2">Популярные</li>
-              <li class="px-2 rounded-sm py-2">Популярные</li>
+              <li @click="toggleOpen" class="px-2 rounded-sm py-2">
+                Популярные
+              </li>
+              <li @click="toggleOpen" class="px-2 rounded-sm py-2">
+                Популярные
+              </li>
+              <li @click="toggleOpen" class="px-2 rounded-sm py-2">
+                Популярные
+              </li>
             </ul>
           </div>
           <div class="flex items-center gap-1">
+            <div
+              @click="modal('filtr')"
+              class="text-darkest-gray flex gap-2 bg-off-white items-center filtr-icon p-3 rounded-sm point text-2xl"
+            >
+              <Icon type="filtr" />
+              <span class="text-base font-semibold">Фильтры</span>
+            </div>
             <div
               @click="selectType('table_fill')"
               :class="[
@@ -148,7 +167,7 @@ const links = [
           <pagination />
         </div>
       </div>
-      <filtr />
+      <filtr class="filtr-pc" />
     </div>
   </div>
 </template>
@@ -186,4 +205,25 @@ const links = [
   }
 }
 
+.z-10 {
+  z-index: 10;
+}
+
+@media only screen and (max-width: 1480px) {
+  .filtr-pc {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .pb-6 {
+    padding-bottom: 0;
+  }
+}
+.filtr-icon {
+  transition: 0.3s ease;
+  &:hover {
+    background: rgba($color-gray-500, 0.4);
+  }
+}
 </style>

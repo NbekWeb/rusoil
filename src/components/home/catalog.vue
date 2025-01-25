@@ -77,6 +77,11 @@ const catalogs = [
     }
   }
 }
+@media only screen and (max-width: 1280px) {
+  .pb-6 {
+    padding-bottom: 0;
+  }
+}
 
 @media only screen and (max-width: 640px) {
   .text-2xl {

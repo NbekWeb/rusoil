@@ -69,13 +69,18 @@ const news = [
     }
   }
 }
+@media only screen and (max-width: 1280px) {
+  .pb-6 {
+    padding-bottom: 0;
+  }
+}
 
 @media only screen and (max-width: 640px) {
   .text-2xl {
     font-size: 20px;
     line-height: 24px;
   }
-  .pb-6,
+  
   .pb-8 {
     padding-bottom: 16px;
   }

@@ -94,10 +94,10 @@ const adding = [
 </script>
 <template>
   <div
-    class="menu-bar text-base text-medium text-gray-light flex flex-col justify-between gap-5"
+    class="menu-bar  text-base text-medium text-gray-light flex flex-col justify-between gap-5"
   >
-    <div class="flex gap-2 flex-col main-menu-bar tr-scrollbar">
-      <div class="flex flex-col gap-0">
+    <div class="flex gap-2 flex-col main-menu-bar tr-scrollbar ">
+      <div class="flex flex-col gap-0  ">
         <template v-for="(item, i) of mainMenu" :key="i">
           <menu-item
             :name="item?.name"
@@ -163,12 +163,18 @@ const adding = [
   padding: 24px 12px;
   width: 320px;
   min-width: 320px;
+  @media only screen and (max-width: 1280px) {
+    width: 240px;
+    min-width: 240px;
+    padding: 8px;
+  }
   @media only screen and (max-width: 1024px) {
     display: none;
   }
   border-right: 1px solid $color-off-white;
   .main-menu-bar {
     overflow-x: auto;
+    
   }
   .select-items {
     bottom: 100%;

@@ -113,7 +113,7 @@ const catalogs = [
   <div class="text-darkest-gray">
     <div class="px-8 py-6 border-b border-off-white">
       <LinkItems :links="links" />
-      <h2 class="text-2xl pt-5 pb-6">Каталог</h2>
+      <h2 class="text-2xl pt-5 pb-6 font-bold">Каталог</h2>
     </div>
     <div class="items gap-6 p-8">
       <template v-for="(catalog, i) of catalogs" :key="i">
@@ -129,7 +129,7 @@ const catalogs = [
             <div class="flex gap-3 flex-col text-xs">
               <template v-for="(item, j) of catalog.items" :key="j">
                 <router-link
-                  to="/lubricants/motor-oils"
+                  :to="{name:'motorOil'}"
                   class="text-darkest-gray"
                 >
                   {{ item?.name }}
@@ -148,11 +148,48 @@ const catalogs = [
 .items {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  @media only screen and (max-width: 1280px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @media only screen and (max-width: 640px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
   .item {
     transition: 0.3s ease;
     &:hover {
       background: $color-gray-lighter;
     }
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .pb-6 {
+    padding-bottom: 0;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .text-2xl {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .py-6 {
+    padding-top: 16px;
+    padding-bottom: 0;
+  }
+ 
+  .gap-6 {
+    gap: 16px;
+  }
+  .p-8 {
+    padding: 16px;
+  }
+  .pt-5 {
+    padding-top: 0px;
+  }
+  .p-6 {
+    padding: 16px;
+  }
+  .w-12{
+    width: 36px;
   }
 }
 </style>

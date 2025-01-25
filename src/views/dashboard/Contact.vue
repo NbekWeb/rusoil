@@ -322,5 +322,9 @@ const links = [
   border-radius: 0 0 12px 12px;
 }
 
-
+@media only screen and (max-width: 1280px) {
+  .pb-6 {
+    padding-bottom: 0;
+  }
+}
 </style>
