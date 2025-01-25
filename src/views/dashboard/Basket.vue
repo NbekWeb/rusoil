@@ -29,7 +29,7 @@ const links = [
     </div>
     <div class="flex gap-6 p-8">
       <div class="flex flex-col gap-8 flex-grow">
-        <div class="grid-4 gap-6 text-sm font-semibold text-gray-6b">
+        <div class="grid-3 gap-6 text-sm font-semibold text-gray-6b">
           <div class="rounded-sm p-6 flex bg-white items-center flex-col gap-3">
             <span>Новая корзина</span>
             <div
@@ -39,9 +39,14 @@ const links = [
             </div>
           </div>
           <div class="rounded-sm p-6 flex bg-white items-start flex-col gap-3">
-            <span>Моторные масла</span>
-            <div class="grid-4 gap-1 p-1 bg-gray-f7 h-12">
-              <div v-for="i of 3" :key="i" class="point rounded-sm bg-white">
+            <div class="flex flex-col justify-between wrap-oil">
+              <span class="font-semibold text-darkest-gray"
+                >Моторные масла</span
+              >
+              <span class="hidden text-gray-500 text-sm">22 товара</span>
+            </div>
+            <div class="flex gap-1 p-1 bg-gray-f7 h-12">
+              <div v-for="i of 2" :key="i" class="point rounded-sm bg-white">
                 <img src="@/assets/img/moto.png" class="w-10 rounded-sm" />
               </div>
               <span class="text-sm flex items-center justify-center">
@@ -74,7 +79,12 @@ const links = [
                 <span>Выбрать все</span>
               </div>
               <div class="flex gap-3 items-center">
-                <span>Действия с выбранными</span>
+                <span >Действия
+                  <span class="sm-hidden">
+
+                    с выбранными
+                  </span>
+                </span>
                 <Icon type="menu" />
               </div>
             </div>
@@ -137,10 +147,10 @@ const links = [
             </div>
           </div>
           <div class="flex flex-col gap-3 border-b border-off-white p-6">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center gap-1">
               <div class="flex flex-col">
                 <span>Адрес доставки</span>
-                <span class="text-black opacity-50"
+                <span class="text-black opacity-50 truncate"
                   >Тюмень, ул. Тюменская 124/5, офис 78
                 </span>
               </div>
@@ -150,10 +160,10 @@ const links = [
                 <Icon type="pen" />
               </div>
             </div>
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between gap-1 items-center">
               <div class="flex flex-col">
                 <span>Юридическое лицо</span>
-                <span class="text-black opacity-50">ООО «ТРЕЙД СЕРВИС» </span>
+                <span class="text-black opacity-50 truncate">ООО «ТРЕЙД СЕРВИС» </span>
               </div>
               <div
                 class="w-12 h-12 flex bg-gray-f1 items-center justify-center text-2xl rounded-sm"
@@ -232,6 +242,10 @@ const links = [
 
 <style scoped lang="scss">
 @import "@/assets/style/var.scss";
+
+.hidden {
+  display: none;
+}
 .border-off-white {
   border-color: $color-gray-eb;
 }
@@ -250,9 +264,6 @@ const links = [
     background: rgba($color: $color-yellow-light, $alpha: 0.8);
   }
 }
-
-
-
 
 .bg-yellow-light {
   &:hover {
@@ -277,9 +288,85 @@ const links = [
 .right-items {
   width: 500px;
 }
+@media only screen and (max-width: 1620px) {
+  .flex.p-8 {
+    flex-direction: column;
+  }
+  .right-items {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media only screen and (max-width: 1280px) {
   .pt-5.pb-6 {
     padding-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .p-3.border-b{
+    padding: 0 4px;
+  }
+  .sm-hidden {
+    display: none;
+  }
+  .p-1 .point:nth-of-type(2) {
+    display: none;
+  }
+  .wrap-oil {
+    height: 100%;
+  }
+  .hidden {
+    display: flex;
+  }
+  .p-1 {
+    span {
+      display: none;
+    }
+  }
+  .text-2xl {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .py-6 ,.p-6{
+    padding: 16px;
+  }
+  .mx-6{
+    margin: 0 16px;
+  }
+  .gap-6,
+  .gap-8 {
+    gap: 16px;
+  }
+  .pt-5 {
+    padding-top: 8px;
+  }
+  .p-8 {
+    padding: 0;
+  }
+  .grid-4,
+  .grid-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .grid-3 {
+    .p-6 {
+      padding: 12px;
+      flex-direction: row-reverse;
+      justify-content: start;
+    }
+
+    gap: 4px;
+  }
+  .right-items {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .mt-3{
+    margin-top: 8px;
+  }
+  .px-6{
+    padding: 0 16px 10px 16px;
   }
 }
 </style>
