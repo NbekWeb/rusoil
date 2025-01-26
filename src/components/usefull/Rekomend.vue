@@ -20,5 +20,9 @@ import tableFill from "../motor-oil/tableFill.vue";
     padding-left: 16px;
     margin-top: 16px;
   }
+  .py-6 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
 }
 </style>
