@@ -174,7 +174,17 @@ defineProps({
     .count-price {
       width: 100%;
       justify-content: space-between; 
+      .h-12{
+        height: 40px;
+      }
+      .w-12{
+        width: 40px;
+      }
     }
+  }
+  .truncate{
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
 }
 </style>

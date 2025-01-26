@@ -10,7 +10,9 @@ const change = (i) => {
 };
 </script>
 <template>
-  <div class="p-1 text-darkest-gray flex bg-off-white rounded-sm items-center h-12">
+  <div
+    class="p-1 text-darkest-gray flex bg-off-white rounded-sm items-center h-12"
+  >
     <div
       @click.stop="change(-1)"
       class="w-10 h-10 rounded-8 bg-white point adding flex text-2xl items-center justify-center"
@@ -41,6 +43,17 @@ const change = (i) => {
     span {
       opacity: 100%;
     }
+  }
+}
+@media only screen and (max-width: 640px) {
+  .h-12 {
+    height: 40px;
+  }
+  .h-10{
+    height: 32px;
+  }
+  .w-10{
+    width: 32px;
   }
 }
 </style>

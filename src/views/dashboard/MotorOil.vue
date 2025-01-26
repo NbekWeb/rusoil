@@ -15,7 +15,7 @@ const open = ref(false);
 const type = ref("table_fill");
 
 const modal = (val) => {
-  modalStore.openModal(val,'Фильтры');
+  modalStore.openModal(val, "Фильтры");
 };
 
 const selectType = (name) => {
@@ -63,15 +63,15 @@ const links = [
 ];
 </script>
 <template>
-  <div>
+  <div class="overflow-x-hidden">
     <div class="px-8 py-6 text-darkest-gray border-b border-off-white">
       <LinkItems :links="links" />
       <h2 class="text-2xl pt-5 pb-6">Моторные масла</h2>
     </div>
-    <div class="py-6 px-8 flex gap-6">
-      <div class="flex-grow">
+    <div class="py-6 px-8 flex gap-6 flex-col">
+      <div class="w-full sm-scroll gap-2 overflow-x-auto tr-scrollbar">
         <div class="flex items-center justify-between">
-          <div class="select relative" ref="dropdownRef">
+          <div class="select lg-hidden relative" ref="dropdownRef">
             <span
               @click="toggleOpen"
               :class="[
@@ -97,10 +97,10 @@ const links = [
               </li>
             </ul>
           </div>
-          <div class="flex items-center gap-1">
+          <div class="flex items-center gap-1 filtr-lg">
             <div
               @click="modal('filtr')"
-              class="text-darkest-gray flex gap-2 bg-off-white items-center filtr-icon p-3 rounded-sm point text-2xl"
+              class="text-darkest-gray flex gap-2 bg-off-white items-center filtr-icon p-3 rounded-sm point text-2xl justify-center"
             >
               <Icon type="filtr" />
               <span class="text-base font-semibold">Фильтры</span>
@@ -108,7 +108,7 @@ const links = [
             <div
               @click="selectType('table_fill')"
               :class="[
-                'p-3 rounded-sm point text-2xl',
+                'p-3 rounded-sm point text-2xl sm-fill',
                 type == 'table_fill'
                   ? 'text-darkest-gray bg-off-white'
                   : 'text-gray-light',
@@ -119,7 +119,7 @@ const links = [
             <div
               @click="selectType('row_fill')"
               :class="[
-                'p-3 rounded-sm point text-2xl',
+                'p-3 rounded-sm point text-2xl sm-fill',
                 type == 'row_fill'
                   ? 'text-darkest-gray bg-off-white'
                   : 'text-gray-light',
@@ -130,7 +130,7 @@ const links = [
             <div
               @click="selectType('grid_fill')"
               :class="[
-                'p-3 rounded-sm point text-2xl',
+                'p-3 sm-fill rounded-sm point text-2xl',
                 type == 'grid_fill'
                   ? 'text-darkest-gray bg-off-white'
                   : 'text-gray-light',
@@ -140,21 +140,27 @@ const links = [
             </div>
           </div>
         </div>
-        <div class="pt-6 filtrs flex gap-2 text-darkest-gray">
-          <div class="point bg-yellow-light text-xs flex gap-2">
-            Бренд: CHAMPION
-            <Icon type="close" class="text-xl" />
-          </div>
-          <div class="point bg-yellow-light text-xs flex gap-2">
-            Объём: от 0.5 до 60
-            <Icon type="close" class="text-xl" />
-          </div>
-          <div class="point bg-off-white text-xs flex gap-2">
-            Сбросить все
-            <Icon type="close" class="text-xl" />
+        <div class="flex items-center">
+          <div
+            class="pt-6 min-w-max filtrs flex gap-2 text-darkest-gray overflow-x-auto custom-scrollbar"
+          >
+            <div class="point bg-yellow-light text-xs flex gap-2">
+              Бренд: CHAMPION
+              <Icon type="close" class="text-xl" />
+            </div>
+            <div class="point bg-yellow-light text-xs flex gap-2">
+              Объём: от 0.5 до 60
+              <Icon type="close" class="text-xl" />
+            </div>
+            <div class="point bg-off-white text-xs flex gap-2">
+              Сбросить все
+              <Icon type="close" class="text-xl" />
+            </div>
           </div>
         </div>
-        <div :class="['mt-6', type == 'grid_fill' && 'grid-4 gap-6 ']">
+      </div>
+      <div class="flex-grow">
+        <div :class="['mt-6', type == 'grid_fill' ? 'grid-4 gap-6 ' : '']">
           <fill type="aksi" :name="type" @click="goItem" />
           <fill :name="type" @click="goItem" />
           <fill type="new" :name="type" @click="goItem" />
@@ -222,8 +228,65 @@ const links = [
 }
 .filtr-icon {
   transition: 0.3s ease;
+  min-width: 120px;
   &:hover {
     background: rgba($color-gray-500, 0.4);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .lg-hidden {
+    display: none;
+  }
+  .filtr-lg {
+    gap: 12px;
+  }
+  .sm-scroll {
+    display: flex;
+    align-items: center;
+    .pt-6 {
+      padding-top: 0px;
+    }
+  }
+  .py-6.gap-6 {
+    gap: 0px;
+  }
+  .p-3 {
+    padding: 8px 0;
+  }
+  .mt-10 {
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    .inp {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .filtr-icon {
+    font-size: 16px;
+    line-height: 20px;
+    .text-base {
+      font-size: 14px;
+    }
+    min-width: 108px;
+    height: 32px;
+  }
+  .sm-fill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+  .pt-5 {
+    padding-top: 8px;
+  }
+  .py-6 {
+    padding-bottom: 16px;
+    padding-top: 16px;
   }
 }
 </style>

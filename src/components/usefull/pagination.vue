@@ -28,6 +28,7 @@
       :class="[
         'point w-12 h-12 rounded-sm flex items-center justify-center',
         num === n ? 'bg-dark-gray text-white' : '',
+        n > 3 && 'sm-hidden',
       ]"
     >
       {{ n }}
@@ -96,5 +97,16 @@ const getVisiblePages = () => {
 .point {
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+}
+@media only screen and (max-width: 640px) {
+  .sm-hidden {
+    display: none;
+  }
+  .w-12 {
+    width: 40px;
+  }
+  .h-12 {
+    height: 40px;
+  }
 }
 </style>

@@ -6,16 +6,21 @@ defineProps({
 </script>
 
 <template>
-  <div class="links ">
-    <div
-      class="flex gap-2 items-center text-xs text-gray-light tr-scrollbar overflow-x-auto "
-    >
-      <template v-for="(link, i) of links" :key="i">
-        <router-link :to="{ name: link?.to }" class="link text-gray-light min-w-max">
-          {{ link?.name }}</router-link
-        >
-        <span v-if="links.length != i + 1"> / </span>
-      </template>
+  <div class="overflow-x-hidden">
+    <div class="links overflow-x-auto tr-scrollbar ">
+      <div
+        class="flex gap-2 items-center text-xs text-gray-light tr-scrollbar overflow-x-auto"
+      >
+        <template v-for="(link, i) of links" :key="i">
+          <router-link
+            :to="{ name: link?.to }"
+            class="link text-gray-light min-w-max"
+          >
+            {{ link?.name }}</router-link
+          >
+          <span v-if="links.length != i + 1"> / </span>
+        </template>
+      </div>
     </div>
   </div>
 </template>

@@ -238,15 +238,30 @@ input {
     }
 
     input:checked+.slider:before {
-        -webkit-transform: translateX(16px)  !important;
-        -ms-transform: translateX(16px)  !important;
-        transform: translateX(16px)  !important;
+        -webkit-transform: translateX(16px) !important;
+        -ms-transform: translateX(16px) !important;
+        transform: translateX(16px) !important;
     }
-    .text-base{
+
+    .text-base {
         font-size: 14px;
         line-height: 16px;
     }
+
     .rounded-sm {
         border-radius: 6px;
     }
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+    
+}
+
+.min-w-max{
+    min-width: max-content;
 }
