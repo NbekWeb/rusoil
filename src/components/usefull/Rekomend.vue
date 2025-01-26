@@ -13,4 +13,12 @@ import tableFill from "../motor-oil/tableFill.vue";
     </div>
   </div>
 </template>
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@media only screen and (max-width: 640px) {
+  .px-8 {
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-top: 16px;
+  }
+}
+</style>

@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import Icon from "../icons/Icon.vue";
 import Checkbox from "@/components/usefull/Checkbox.vue";
-
+import Count from "./Count.vue";
 defineProps({
   check: {
     type: Boolean,
@@ -31,8 +31,8 @@ const change = (i) => {
         <span class="opacity-50">Артикул 19435</span>
       </div>
     </div>
-    <div class="flex gap-6 items-center bor right-item">
-      <div class="flex-col items-end flex gap-1">
+    <div class="flex gap-6 items-center  right-item">
+      <div class="flex-col items-end flex gap-2">
         <span class="font-semibold">320 000 ₽</span>
         <span
           class="flex font-bold coin gap-1 items-center rounded-sm bg-yellow-light text-darkest-gray"
@@ -41,9 +41,10 @@ const change = (i) => {
           <span>20</span>
         </span>
       </div>
-
-      <Count />
-      <Icon type="delete" class="text-gray-light text-2xl point" />
+      <div class="flex items-center gap-6">
+        <Count />
+        <Icon type="delete" class="text-gray-light text-2xl point" />
+      </div>
     </div>
   </div>
 </template>
@@ -51,16 +52,43 @@ const change = (i) => {
 .coin {
   padding: 2px 6px;
 }
+.right-item {
+  min-width: max-content;
+}
 @media only screen and (max-width: 768px) {
   .p-3 {
     flex-direction: column;
     align-items: start;
-    .gap-6{
+    .gap-6 {
       gap: 4px;
     }
     .right-item {
-      width: 100%;
+      margin-left: 76px;
+      width: auto;
+
+      .flex-col {
+        flex-direction: row;
+        align-items: center;
+      }
+      .gap-6 {
+        gap: 24px;
+      }
     }
+    .right-item.gap-6 {
+      gap: 24px;
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  .right-item {
+    flex-direction: column;
+    align-items: start;
+    .gap-6 {
+      gap: 12px;
+    }
+  }
+  .right-item.gap-6 {
+    gap: 12px;
   }
 }
 </style>
