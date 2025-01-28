@@ -55,5 +55,6 @@ const change = (i) => {
   .w-10{
     width: 32px;
   }
+  
 }
 </style>

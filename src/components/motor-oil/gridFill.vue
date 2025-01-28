@@ -63,7 +63,7 @@ defineProps({
         </div>
       </div>
 
-      <div class="flex gap-2">
+      <div class="flex gap-2 sm-beetween">
         <Count />
         <div
           :class="[
@@ -95,5 +95,29 @@ img {
 
 .check {
   border: 1px solid $color-yellow-light;
+}
+@media only screen and (max-width: 640px) {
+  .truncate {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+  .h-12 {
+    height: 40px;
+  }
+  .w-12 {
+    width: 40px;
+  }
+  .py-3 {
+    padding: 0;
+  }
+  .gap-2 {
+    gap: 0px;
+  }
+  .gap-3 {
+    gap: 6px;
+  }
+  .sm-beetween{
+    justify-content: space-between;
+  }
 }
 </style>

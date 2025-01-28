@@ -100,7 +100,7 @@ defineProps({
       </div>
     </div>
     <div class="lg-show">
-      <table-fill />
+      <table-fill :type="type" />
     </div>
   </div>
 </template>
@@ -131,8 +131,8 @@ img {
   }
   .lg-show {
     display: flex;
-    .p-3{
-      padding:8px 0;
+    .p-3 {
+      padding: 8px 0;
     }
   }
 }

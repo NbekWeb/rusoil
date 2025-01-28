@@ -108,5 +108,9 @@ const getVisiblePages = () => {
   .h-12 {
     height: 40px;
   }
+  .gap-3{
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 </style>

@@ -225,6 +225,9 @@ const links = [
   .pb-6 {
     padding-bottom: 0;
   }
+  .grid-4 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 .filtr-icon {
   transition: 0.3s ease;
@@ -234,6 +237,12 @@ const links = [
   }
 }
 @media only screen and (max-width: 768px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .gap-6 {
+    gap: 16px;
+  }
   .lg-hidden {
     display: none;
   }
