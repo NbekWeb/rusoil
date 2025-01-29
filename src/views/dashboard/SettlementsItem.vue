@@ -2,6 +2,8 @@
 import LinkItems from "@/components/usefull/LinkItems.vue";
 import Icon from "@/components/icons/Icon.vue";
 import Checkbox from "@/components/usefull/Checkbox.vue";
+import itemCard from "@/components/settlements/item.vue";
+
 const links = [
   {
     name: "Главная",
@@ -33,25 +35,32 @@ const heads = ["Название", "Кол-во", "Цена за ед.", "Сум
       <h2 class="text-2xl pt-5 pb-6">Накладная №12041 от 10 сен 2024</h2>
     </div>
     <div class="px-8 border-b border-off-white">
-      <div class="flex gap-6">
-        <div class="flex gap-2 items-center py-10">
-          <Icon type="t-mark" class="text-red text-2xl" />
-          <span> Заказ не оплачен</span>
+      <div class="flex items-center justify-between sm-col">
+        <div class="flex gap-6">
+          <div class="flex gap-2 items-center py-10">
+            <Icon type="t-mark" class="text-red text-2xl" />
+            <span> Заказ не оплачен</span>
+          </div>
+          <div class="flex gap-2 items-center py-10">
+            <Icon type="bag" class="opacity-20 text-2xl" />
+            <span> Всего позиций: 8</span>
+          </div>
+          <div class="flex gap-2 items-center py-10">
+            <Icon type="truck" class="opacity-20 text-2xl" />
+            <span> Scania, А867ЕЕ</span>
+          </div>
+          <div class="flex gap-2 items-center py-10">
+            <Icon type="phone" class="opacity-20 text-2xl" />
+            <span> +7 (900) 321-01-23</span>
+          </div>
         </div>
-        <div class="flex gap-2 items-center py-10">
-          <Icon type="bag" class="opacity-20 text-2xl" />
-          <span> Всего позиций: 8</span>
-        </div>
-        <div class="flex gap-2 items-center py-10">
-          <Icon type="truck" class="opacity-20 text-2xl" />
-          <span> Scania, А867ЕЕ</span>
-        </div>
-        <div class="flex gap-2 items-center py-10">
-          <Icon type="phone" class="opacity-20 text-2xl" />
-          <span> +7 (900) 321-01-23</span>
+        <div
+          class="btn rounded-sm h-12 bg-yellow-light flex items-center px-6 font-semibold"
+        >
+          Оплатить
         </div>
       </div>
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-3 xs-grid">
         <div
           class="search mx-6 h-12 flex flex-grow items-center rounded-sm relative"
         >
@@ -66,11 +75,18 @@ const heads = ["Название", "Кол-во", "Цена за ед.", "Сум
           />
           <!-- <Icon type="cancel" class="cancel-icon absolute point" /> -->
         </div>
-        <div
-          class="point flex gap-1 items-center py-3 px-4 inp border rounded-sm"
-        >
-          Действия
-          <Icon type="menu" class="text-2xl" />
+        <div class="flex items-center justify-between">
+          <span class="flex items-center gap-2 lg-show text-sm">
+            <Checkbox :check="true" />
+
+            Выбрать все
+          </span>
+          <div
+            class="point flex gap-1 items-center py-3 px-4 inp border rounded-sm"
+          >
+            Действия
+            <Icon type="menu" class="text-2xl" />
+          </div>
         </div>
       </div>
       <table class="mt-8 lg-hidden rounded-sm border border-off-white w-full">
@@ -122,16 +138,20 @@ const heads = ["Название", "Кол-во", "Цена за ед.", "Сум
           </td>
         </tr>
       </table>
+      <div class="lg-grid bor-y grid-1 mt-3">
+        <item-card v-for="i in 4" :key="i" />
+      </div>
       <div class="p-8 flex items-center justify-between">
         <div class="flex flex-col gap-1">
-          <span class="opacity-50">Адрес доставки</span>
-          <span class="font-semibold">Тюмень</span>
-          <span class="opacity-50">625019 Тюмень, ул. Республики 256/1 </span>
+          <span class="font-semibold">Адрес доставки</span>
+
+          <span class="opacity-50"
+            >Тюмень 625019 Тюмень, ул. Республики 256/1
+          </span>
         </div>
         <div class="flex flex-col gap-1 justify-end">
-          <span class="opacity-50"> Итого</span>
-          <span class="font-semibold">240 000 ₽</span>
-          <span class="opacity-50">Вес по накладной 124.56 кг </span>
+           <span class="font-semibold"> Итого</span>
+          <span class="opacity-50">240 000 ₽ Вес по накладной 124.56 кг </span>
         </div>
       </div>
       <div class="px-8 pb-8 flex justify-end items-center gap-2">
@@ -167,6 +187,10 @@ const heads = ["Название", "Кол-во", "Цена за ед.", "Сум
 <style scoped lang="scss">
 @import "@/assets/style/var.scss";
 
+.lg-show,
+.lg-grid {
+  display: none;
+}
 .bor-black-8 {
   border-color: rgba($color: $black, $alpha: 0.08);
 }
@@ -209,14 +233,49 @@ th {
 }
 
 @media only screen and (max-width: 640px) {
+  .p-8 {
+    flex-direction: column;
+    align-items: start;
+  }
   .px-8 {
     padding-right: 16px;
     padding-left: 16px;
   }
+  .py-6 {
+    padding: 16px;
+  }
+  .pt-5 {
+    padding-top: 8px;
+  }
+  .text-2xl {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .sm-col {
+    flex-direction: column;
+    margin-bottom: 12px;
+    .gap-6 {
+      width: 100%;
+    }
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
 }
 @media only screen and (max-width: 768px) {
+  .lg-show {
+    display: flex;
+  }
+  .lg-grid {
+    display: grid;
+  }
   .lg-hidden {
     display: none;
+  }
+  .xs-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
   .py-10 {
     padding-bottom: 0px;
@@ -252,5 +311,10 @@ th {
   .pb-8 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
+}
+
+.bor-y {
+  border-top: 1px solid $color-gray-lighter;
+  border-bottom: 1px solid $color-gray-lighter;
 }
 </style>
