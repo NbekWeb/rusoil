@@ -2,7 +2,7 @@
 import LinkItems from "@/components/usefull/LinkItems.vue";
 import Icon from "@/components/icons/Icon.vue";
 import pagination from "@/components/usefull/pagination.vue";
-
+import card from "@/components/settlements/card.vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -145,7 +145,7 @@ const items = [
           Общая задолженность: <span class="text-red"> -416 348.15 ₽ </span>
         </p>
         <div class="flex gap-1 font-semibold">
-          <div class="point py-3 px-4 inp border rounded-sm">
+          <div class="point py-3 lg-hidden px-4 inp border rounded-sm">
             Запросить акт сверки
           </div>
           <div class="point py-3 px-4 inp bg-yellow-light rounded-sm">
@@ -153,31 +153,33 @@ const items = [
           </div>
         </div>
       </div>
-      <div class="grid-4 gap-6 px-8">
-        <div
-          class="border rounded-sm bor-black-8 bg-gray-50 p-4 flex flex-col gap-1"
-        >
-          <span class="font-semibold"> 0 ₽ </span>
-          <span> ООО «ГК Русойл» № ГК-1/2018 </span>
-        </div>
-        <div class="border rounded-sm bg-red-50 p-4 flex flex-col gap-1">
-          <span class="font-semibold text-red"> -416 348.15 ₽ </span>
-          <span> ООО «ГК Русойл» № ГК-1/2018 </span>
-        </div>
-        <div
-          class="border rounded-sm bor-black-8 bg-gray-50 p-4 flex flex-col gap-1"
-        >
-          <span class="font-semibold"> 0 ₽ </span>
-          <span> ООО «ГК Русойл» № ГК-1/2018 </span>
-        </div>
-        <div
-          class="border rounded-sm bor-black-8 bg-gray-50 p-4 flex flex-col gap-1"
-        >
-          <span class="font-semibold"> 0 ₽ </span>
-          <span> ООО «ГК Русойл» № ГК-1/2018 </span>
+      <div class="overflow-x-hidden">
+        <div class="grid-4 gap-6 px-8 tr-scrollbar">
+          <div
+            class="border rounded-sm bor-black-8 bg-gray-50 p-4 flex flex-col gap-1"
+          >
+            <span class="font-semibold"> 0 ₽ </span>
+            <span> ООО «ГК Русойл» № ГК-1/2018 </span>
+          </div>
+          <div class="border rounded-sm bg-red-50 p-4 flex flex-col gap-1">
+            <span class="font-semibold text-red"> -416 348.15 ₽ </span>
+            <span> ООО «ГК Русойл» № ГК-1/2018 </span>
+          </div>
+          <div
+            class="border rounded-sm bor-black-8 bg-gray-50 p-4 flex flex-col gap-1"
+          >
+            <span class="font-semibold"> 0 ₽ </span>
+            <span> ООО «ГК Русойл» № ГК-1/2018 </span>
+          </div>
+          <div
+            class="border rounded-sm bor-black-8 bg-gray-50 p-4 flex flex-col gap-1"
+          >
+            <span class="font-semibold"> 0 ₽ </span>
+            <span> ООО «ГК Русойл» № ГК-1/2018 </span>
+          </div>
         </div>
       </div>
-      <div class="flex p-8 gap-6 border-b border-off-white">
+      <div class="flex p-8 gap-6 sm-col">
         <div class="flex items-center gap-3">
           <div>
             <span class="opacity-50"> Ближайший платеж: </span>
@@ -185,13 +187,15 @@ const items = [
           </div>
           <Icon type="mark" class="text-xl opacity-40" />
         </div>
-        <div>
-          <span class="opacity-50"> Просроченный платеж: </span>
-          <span class="font-semibold text-red">40 000 ₽ </span>
+        <div class="flex items-center gap-3">
+          <div>
+            <span class="opacity-50"> Просроченный платеж: </span>
+            <span class="font-semibold text-red">40 000 ₽ </span>
+          </div>
+          <Icon type="mark" class="text-xl opacity-40" />
         </div>
-        <Icon type="mark" class="text-xl opacity-40" />
       </div>
-      <div class="px-8">
+      <div class="px-8 table-wrap lg-hidden">
         <table class="w-full bor-black-8 border rounded-sm mb-10">
           <tr class="bg-gray-50 grid-6 gap-0 rounded-t-sm border-b bor-black-8">
             <th :key="i" class="" v-for="(item, i) of heads">
@@ -246,6 +250,9 @@ const items = [
           <pagination />
         </div>
       </div>
+      <div class="grid-2 gap-5 px-4 pb-5">
+        <card v-for="i in 4" :key="i" :type="i < 3 && 'warn'" />
+      </div>
     </div>
   </div>
 </template>
@@ -261,9 +268,8 @@ const items = [
   border-color: $color-red;
 }
 
-
 .grid-2 {
- .grid-item {
+  .grid-item {
     background: $color-gray-50;
     .large-icon {
       font-size: 48px;
@@ -293,6 +299,74 @@ th {
 @media only screen and (max-width: 1280px) {
   .pt-5.pb-6 {
     padding-bottom: 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .lg-hidden {
+    display: none;
+  }
+  .grid-4 {
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    overflow-x: auto;
+    .p-4 {
+      padding: 10px;
+    }
+    div {
+      min-width: 240px;
+    }
+  }
+}
+@media only screen and (max-width: 640px) {
+  .grid-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .grid-2.gap-5 {
+    gap: 12px;
+  }
+  .text-2xl {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .px-8,
+  .p-8 {
+    padding: 16px;
+  }
+  .table-wrap {
+    padding: 0 16px;
+  }
+  .pt-5 {
+    padding-top: 8px;
+  }
+  .sm-col {
+    flex-direction: column;
+  }
+  .sm-col.gap-6 {
+    gap: 8px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .text-base {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .p-8.justify-between {
+    flex-direction: column;
+    gap: 12px;
+    align-items: start;
+    .text-xl {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .gap-1 {
+      width: 100%;
+      .bg-yellow-light {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
   }
 }
 </style>

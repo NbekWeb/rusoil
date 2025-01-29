@@ -98,6 +98,7 @@ const links = [
             </ul>
           </div>
           <div class="flex items-center gap-1 filtr-lg">
+            
             <div
               @click="modal('filtr')"
               class="text-darkest-gray flex gap-2 bg-off-white items-center filtr-icon p-3 rounded-sm point text-2xl justify-center"
@@ -108,7 +109,7 @@ const links = [
             <div
               @click="selectType('table_fill')"
               :class="[
-                'p-3 rounded-sm point text-2xl sm-fill',
+                'p-3 rounded-sm point text-2xl sm-fill sm-hide',
                 type == 'table_fill'
                   ? 'text-darkest-gray bg-off-white'
                   : 'text-gray-light',
@@ -289,6 +290,9 @@ const links = [
     width: 32px;
     height: 32px;
     font-size: 20px;
+  }
+  .sm-hide{
+    display: none;
   }
   .pt-5 {
     padding-top: 8px;

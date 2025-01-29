@@ -61,11 +61,18 @@
               <tr class="w-full bg-gray-50 rounded-sm grid-3">
                 <th class="px-4 py-3 opacity-50 text-start">Склад</th>
                 <th class="px-4 py-3 opacity-50 text-start">Наличие</th>
-                <th class="px-4 py-3 opacity-50 text-start">Доставка до вас</th>
+                <th class="px-4 py-3 opacity-50 text-start">
+                  Доставка
+                  <span class="sm-hidden"> до вас </span>
+                </th>
               </tr>
             </thead>
             <tbody>
-              <tr class="grid-3 point w-full item-table rounded-sm" v-for="i of 6" :key="i">
+              <tr
+                class="grid-3 point w-full item-table rounded-sm"
+                v-for="i of 6"
+                :key="i"
+              >
                 <td class="px-4 py-3 text-start">Тюмень</td>
                 <td class="px-4 py-3 text-start">
                   <div class="flex gap-3 items-center">
@@ -135,6 +142,18 @@ const setActiveTab = (index) => {
     width: 100%; /* Narrower width for the selected tab */
     height: 1px;
     background-color: $color-red; /* Highlight color */
+  }
+}
+@media only screen and (max-width: 640px) {
+  .sm-hidden {
+    display: none;
+  }
+  .py-3 {
+    padding-bottom: 8px;
+    padding-top: 8px;
+  }
+  .px-4.justify-end {
+    justify-content: center;
   }
 }
 </style>

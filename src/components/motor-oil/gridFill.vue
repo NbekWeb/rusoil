@@ -50,7 +50,10 @@ defineProps({
     <div class="flex flex-col gap-3">
       <div class="flex justify-between items-center">
         <div class="flex items-center gap-3">
-          <span>В наличии 40 шт</span>
+          <span>
+            <span class="lg-hide"> В наличии </span>
+            40 шт</span
+          >
           <span class="flex min-w-2 h-2 bg-green-500 rounded-full"></span>
         </div>
         <Icon type="mark" class="text-xl text-gray-light" />
@@ -96,6 +99,11 @@ img {
 .check {
   border: 1px solid $color-yellow-light;
 }
+@media only screen and (max-width: 768px) {
+  .lg-hide{
+    display: none;
+  }
+}
 @media only screen and (max-width: 640px) {
   .truncate {
     -webkit-line-clamp: 2;
@@ -116,7 +124,7 @@ img {
   .gap-3 {
     gap: 6px;
   }
-  .sm-beetween{
+  .sm-beetween {
     justify-content: space-between;
   }
 }

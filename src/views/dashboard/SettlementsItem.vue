@@ -73,7 +73,7 @@ const heads = ["Название", "Кол-во", "Цена за ед.", "Сум
           <Icon type="menu" class="text-2xl" />
         </div>
       </div>
-      <table class="mt-8 rounded-sm border border-off-white w-full">
+      <table class="mt-8 lg-hidden rounded-sm border border-off-white w-full">
         <tr class="flex bg-gray-50 rounded-t-sm">
           <th
             v-for="(item, i) of heads"
@@ -182,7 +182,7 @@ const heads = ["Название", "Кол-во", "Цена за ед.", "Сум
 }
 
 .grid-2 {
-   .grid-item {
+  .grid-item {
     background: $color-gray-50;
     .large-icon {
       font-size: 48px;
@@ -197,8 +197,6 @@ const heads = ["Название", "Кол-во", "Цена за ед.", "Сум
   }
 }
 
-
-
 th {
   font-weight: 400;
 }
@@ -209,9 +207,50 @@ th {
 .min-w-50 {
   min-width: 200px;
 }
+
+@media only screen and (max-width: 640px) {
+  .px-8 {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .lg-hidden {
+    display: none;
+  }
+  .py-10 {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+  .p-8 {
+    padding: 10px 0;
+  }
+  .mx-6 {
+    margin: 0;
+  }
+  .gap-6 {
+    margin: 10px 0;
+    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .pb-8 {
+    padding: 0 0 12px 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 @media only screen and (max-width: 1280px) {
   .pt-5.pb-6 {
     padding-bottom: 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .gap-6 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .pb-8 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 </style>

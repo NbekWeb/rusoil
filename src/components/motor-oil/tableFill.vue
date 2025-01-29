@@ -70,10 +70,13 @@ defineProps({
         </div>
       </div>
 
-      <div class="flex gap-2 count-price  items-center">
+      <div class="flex gap-2 count-price items-center">
         <Icon
           @click.stop="toLike"
-          :class="['point sm-show bg-off-white w-10 h-10 items-center justify-center  rounded-sm text-2xl', like ? ' text-red' : 'text-gray-light']"
+          :class="[
+            'point sm-show bg-off-white w-10 h-10 items-center justify-center  rounded-sm text-2xl',
+            like ? ' text-red' : 'text-gray-light',
+          ]"
           :type="like ? 'heart-red' : 'heart'"
         />
         <Count />
@@ -88,7 +91,10 @@ defineProps({
         </div>
         <Icon
           @click.stop="toLike"
-          :class="['point sm-hidden text-2xl', like ? ' text-red' : 'text-gray-light']"
+          :class="[
+            'point sm-hidden text-2xl',
+            like ? ' text-red' : 'text-gray-light',
+          ]"
           :type="like ? 'heart-red' : 'heart'"
         />
       </div>
@@ -98,7 +104,7 @@ defineProps({
 <style lang="scss" scoped>
 @import "@/assets/style/var.scss";
 
-.sm-show{
+.sm-show {
   display: none;
 }
 .types {
@@ -156,10 +162,13 @@ defineProps({
   }
 }
 @media only screen and (max-width: 640px) {
+  .p-3 {
+    padding: 12px 0;
+  }
   .sm-hidden {
     display: none;
   }
-  .sm-show{
+  .sm-show {
     display: flex;
   }
   .right-items {
@@ -173,16 +182,16 @@ defineProps({
     }
     .count-price {
       width: 100%;
-      justify-content: space-between; 
-      .h-12{
+      justify-content: space-between;
+      .h-12 {
         height: 40px;
       }
-      .w-12{
+      .w-12 {
         width: 40px;
       }
     }
   }
-  .truncate{
+  .truncate {
     -webkit-line-clamp: 2;
     line-clamp: 2;
   }

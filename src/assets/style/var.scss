@@ -15,6 +15,8 @@ $color-gray-f1: #F1F2F4;
 $color-gray-500: #71717A;
 $color-gray-f7: #F7F7F7;
 $color-gray-29: rgba(41, 42, 41, 0.5);
+$color-red-100: #FFE4DF;
+$color-red-900: #882614;
 $color-red: #FF5131;
 $color-gray-mid: #71717A;
 $color-gray-eb: #EBEBEB;
@@ -163,6 +165,10 @@ $color-yellow-700:#723711B2;
 
 .text-red {
     color: $color-red;
+}
+
+.text-red-900 {
+    color: $color-red-900;
 }
 
 .text-gray-mid {

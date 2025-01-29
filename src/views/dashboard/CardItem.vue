@@ -32,14 +32,14 @@ const changeSelected = (name) => {
     <div class="px-8 py-6 text-darkest-gray border-b border-off-white">
       <LinkItems :links="links" />
     </div>
-    <div class="p-8 grid-3 gap-6 ">
-      <div class="relative ">
+    <div class="p-8 grid-3 gap-6">
+      <div class="relative">
         <span class="types absolute p-3 rounded-sm text-sm bg-red text-white">
           АКЦИЯ
         </span>
         <img src="@/assets/img/moto.png" class="w-full" />
       </div>
-      <div class="">
+      <div class="order-3">
         <h2 class="text-2xl font-semibold mb-4">
           Моторное масло BAROX ULTRA Revo Plus 5W-30 4 л. синт.
         </h2>
@@ -64,8 +64,8 @@ const changeSelected = (name) => {
               <Icon type="chevron" class="text-2xl -rotate-90" />
             </div>
           </div>
-          <div class="flex gap-2">
-            <Count />
+          <div class="flex gap-2 wrap-count">
+            <Count class="count" />
             <div
               class="bg-yellow-light p-4 point rounded-sm flex-grow h-full flex items-center justify-center font-semibold text-base"
             >
@@ -102,4 +102,44 @@ const changeSelected = (name) => {
   }
 }
 
+@media only screen and (max-width: 1580px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .order-3 {
+    order: 3;
+    grid-column: span 2;
+  }
+}
+
+@media only screen and (max-width: 1180px) {
+  .wrap-count {
+    flex-direction: column;
+    .count {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .px-8,
+  .p-8 {
+    padding: 16px;
+  }
+  .text-2xl {
+    font-size: 20px;
+  }
+  .grid-3 {
+    display: flex;
+    flex-direction: column;
+
+    .shadow {
+      box-shadow: none;
+    }
+    .p-6 {
+      padding: 0;
+    }
+  }
+}
 </style>

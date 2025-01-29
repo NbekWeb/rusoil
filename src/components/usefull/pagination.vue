@@ -99,6 +99,12 @@ const getVisiblePages = () => {
   transition: background-color 0.3s, color 0.3s;
 }
 @media only screen and (max-width: 640px) {
+  .gap-3 {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
   .sm-hidden {
     display: none;
   }
@@ -107,10 +113,6 @@ const getVisiblePages = () => {
   }
   .h-12 {
     height: 40px;
-  }
-  .gap-3{
-    justify-content: space-between;
-    width: 100%;
   }
 }
 </style>
