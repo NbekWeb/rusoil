@@ -27,16 +27,16 @@ const links = [
       </div>
       <div class="grid-4 gap-6 items-end">
         <div class="flex gap-2 flex-col">
-          <span>Период</span>
+          <span class="sm-hidden">Период</span>
           <div
             class="point border rounded-sm px-4 py-3 inp flex justify-between items-center"
           >
-            <span> Год </span>
+            <span c> Год </span>
             <Icon type="chevron-left" class="-rotate-90 text-xl" />
           </div>
         </div>
         <div class="flex gap-2 flex-col">
-          <span>Статус</span>
+          <span class="sm-hidden">Статус</span>
           <div
             class="point border rounded-sm px-4 py-3 inp flex justify-between items-center"
           >
@@ -44,7 +44,7 @@ const links = [
             <Icon type="chevron-left" class="-rotate-90 text-xl" />
           </div>
         </div>
-        <div class="flex items-center rounded-sm relative">
+        <div class="flex col-2 items-center rounded-sm relative">
           <input
             type="search"
             placeholder="Поиск по корзине"
@@ -57,7 +57,7 @@ const links = [
           <!-- <Icon type="cancel" class="cancel-icon absolute point" /> -->
         </div>
       </div>
-      <div class="mt-6 text-sm">
+      <div class="mt-6 text-sm lg-hidden">
         <div
           class="grid-2 justify-between items-center border-b border-off-white pb-3"
         >
@@ -254,6 +254,39 @@ const links = [
           </div>
         </div>
       </div>
+
+      <div class="grid-2 mt-5 gap-2 text-xs">
+        <div class="p-4 rounded-sm border-gray" v-for="i in 6" :key="i">
+          <span class="font-semibold"
+            >Претензия №123-456-564 от 14 окт 2024</span
+          >
+          <span class="flex mt-1 text-gray-500 text-sm">
+            Количественные расхождения
+          </span>
+
+          <div
+            class="warn max-w-max flex gap-1 items-center text-yellow-700 py-05 px-2 rounded-sm mt-5"
+          >
+            НА СОГЛАСОВАНИИ
+            <Icon type="t-mark" class="text-2xl" />
+          </div>
+          <span class="underline mt-4 flex"
+            >Заказ №50008844-0156 от 13 авг 2024</span
+          >
+          <span class="text-gray-500 text-sm flex mt-1">10 позиций</span>
+
+          <div class="flex mt-4 text-gray-500 gap-6 items-center">
+            <span class="flex gap-2 items-center">
+              <Icon type="msg" class="text-2xl" />
+              <span> Чат </span>
+            </span>
+            <div class="flex  gap-2 items-center">
+              <icon type="star" class="text-2xl opacity-50" />
+              <span>Оценить</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -268,13 +301,14 @@ const links = [
   }
 }
 
-
 @media only screen and (max-width: 1280px) {
   .pb-6 {
     padding-bottom: 0;
   }
+  .col-2 {
+    grid-column: span 2;
+  }
 }
-
 
 .warn {
   background: #fef9c3;
@@ -286,5 +320,44 @@ const links = [
 .success {
   color: #064e3bb2;
   background: #dcfce7;
+}
+
+@media only screen and (max-width: 1024px) {
+  .lg-hidden {
+    display: none;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .py-6,.p-8{
+    padding: 16px;
+  }
+  .pb-8{
+    padding-bottom: 12px;
+  }
+  .pt-5{
+    padding-top: 8px;
+  }
+  .sm-hidden {
+    display: none;
+  }
+  .gap-6 {
+    gap: 8px;
+  }
+  .grid-4 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .grid-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .col-2 {
+    grid-column: span 3;
+  }
+}
+.border-gray {
+  border: 1px solid $color-gray-lighter;
+}
+.py-05 {
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 </style>
