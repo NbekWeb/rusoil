@@ -26,7 +26,7 @@ const goItem = () => {
       <link-items :links="links" />
       <h2 class="text-2xl pt-5 pb-6 font-semibold">Новости</h2>
     </div>
-    <div class="grid-4 gap-6 px-8">
+    <div class="grid-4 gap-6 px-8 mt-4">
       <div
         @click="goItem"
         class="item point flex flex-col gap-3"
@@ -73,5 +73,26 @@ const goItem = () => {
     padding-bottom: 0;
   }
 }
-
+@media only screen and (max-width: 1024px) {
+  .gap-6 {
+    gap: 8px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .pt-5{
+    padding-top: 8px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .text-2xl{
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .px-8 {
+    padding: 16px;
+  }
+}
 </style>

@@ -7,7 +7,6 @@ import adress from "@/components/my-account/adress.vue";
 import notification from "@/components/my-account/notification.vue";
 import tab from "@/components/my-account/tab.vue";
 
-
 const links = [
   {
     name: "Главная",
@@ -60,7 +59,7 @@ const links = [
         <company />
       </div>
     </div>
-    <tab class="show"/>
+    <tab class="show" />
   </div>
 </template>
 
@@ -100,6 +99,14 @@ const links = [
   }
 }
 @media only screen and (max-width: 1280px) {
+  .pb-6 {
+    padding-bottom: 0;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .pt-5 {
+    padding-top: 8px;
+  }
   .pb-6 {
     padding-bottom: 0;
   }
