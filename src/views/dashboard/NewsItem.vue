@@ -32,9 +32,12 @@ const goBack = () => {
       <img src="@/assets/img/news1.jpg" class="w-full rounded-sm" />
       <span class="opacity-50">Опубликовано: 2 апреля 2024 </span>
     </div>
-    <div class="flex justify-between mt-6 gap-20">
-      <div class="flex flex-col gap-10 px-8">
-        <h3 class="text-4xl font-semibold">Обучение от ZIC в Тюмени</h3>
+    <h3 class="text-4xl px-8 my-6 font-semibold flex min-w-full">
+      Обучение от ZIC в Тюмени
+    </h3>
+
+    <div class="flex justify-between gap-20 px-8">
+      <div class="flex flex-col gap-10">
         <div class="flex flex-col gap-6">
           <p class="text-base">
             На прошлой неделе в Тюмени прошёл технический семинар бренда ZIC,
@@ -91,8 +94,8 @@ const goBack = () => {
           </div>
         </div>
       </div>
-      <div class="text-xl min-w-500 pr-8 mt-20">
-        <span class="">Другие новости</span>
+      <div class="text-xl min-w-500">
+        <span class="font-semibold text-xl">Другие новости:</span>
         <div class="flex mt-6 flex-col">
           <div
             class="w-full flex gap-2 flex-col py-3 border-b border-off-white"
@@ -134,7 +137,7 @@ const goBack = () => {
         <div class="item point flex flex-col gap-3" v-for="i of 5" :key="i">
           <img src="@/assets/img/news1.jpg" class="rounded-sm w-full" />
           <div class="flex flex-col gap-2">
-            <span class=""> 2 апреля 2024 </span>
+            <span class="text-base"> 2 апреля 2024 </span>
             <span class="title font-semibold text-base">
               Обучение от ZIC в Тюмени
             </span>
@@ -160,5 +163,63 @@ const goBack = () => {
   }
 }
 
+@media only screen and (max-width: 1280px) {
+  .min-w-500 {
+    min-width: 350px;
+  }
+  .gap-20 {
+    gap: 40px;
+  }
+  .grid-5 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
 
+@media only screen and (max-width: 1180px) {
+  .min-w-500 {
+    min-width: 250px;
+  }
+  .grid-5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .min-w-500 {
+    display: none;
+  }
+  .my-6 {
+    margin: 16px 0;
+  }
+  .text-4xl {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .grid-5 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .py-6 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .mt-20 {
+    margin-top: 32px;
+  }
+  .text-4xl,
+  .text-2xl {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .text-base {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .gap-2 {
+    gap: 4px;
+  }
+  .gap-6 {
+    gap: 12px;
+  }
+}
 </style>

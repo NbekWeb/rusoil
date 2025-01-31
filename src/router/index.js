@@ -66,11 +66,7 @@ const router = createRouter({
           component: () => import('../views/dashboard/MyAccount.vue'),
           name: 'myAccount',
         },
-        {
-          path: 'contact',
-          component: () => import('../views/dashboard/Contact.vue'),
-          name: 'contact',
-        },
+        
         {
           path: 'news',
           component: () => import('../views/dashboard/News.vue'),
@@ -88,8 +84,7 @@ const router = createRouter({
         },
         {
           path: 'msg',
-          component: () => import('../views/dashboard/News.vue'),
-          name: 'msg',
+          component: () => import('../views/dashboard/Home.vue'),  name: 'msg',
         },
         {
           path: 'favorite',

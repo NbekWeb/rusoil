@@ -44,7 +44,7 @@ const goItem = () => {
     </div>
     <div class="flex items-center justify-between px-8 pt-15 pb-10">
       <div
-        class="text-base point flex gap-2 items-center inp border rounded-sm px-4 py-3"
+        class="text-base point flex gap-2 sm-full items-center inp border rounded-sm px-4 py-3"
       >
         Показать ещё
         <icon type="chevron-left" class="-rotate-90 text-2xl" />
@@ -93,6 +93,15 @@ const goItem = () => {
   }
   .px-8 {
     padding: 16px;
+  }
+  .pt-15{
+    flex-direction: column;
+    gap:8px;
+    .sm-full{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 </style>
