@@ -38,7 +38,7 @@ const links = [
     </router-link>
     <template v-for="(link, i) of links" :key="i">
       <router-link
-        :to="'/' + link?.to"
+        :to="{ name: link?.to }"
         class="link flex-col gap-0 flex items-center relative"
       >
         <span>

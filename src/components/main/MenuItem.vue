@@ -2,7 +2,7 @@
 import Icon from "../icons/Icon.vue";
 import { RouterLink } from "vue-router";
 
-defineProps({
+const props = defineProps({
   name: String,
   icon: String,
   to: String,
@@ -17,6 +17,7 @@ defineProps({
       { 'bg-off-white ': selected },
     ]"
   >
+    
     <Icon
       :type="icon"
       :class="[
@@ -27,7 +28,12 @@ defineProps({
     />
     <span
       class="font-medium text-base flex items-center justify-between flex-grow"
-      >{{ name }} <span class="text-xs bg-red rounded-full w-6 h-6 flex items-center justify-center text-white" v-if="to=='basket'">25</span>
+      >{{ name }}
+      <span
+        class="text-xs bg-red rounded-full w-6 h-6 flex items-center justify-center text-white"
+        v-if="to == 'basket'"
+        >25</span
+      >
     </span>
   </router-link>
 </template>
