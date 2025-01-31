@@ -8,8 +8,7 @@ import AuthView from '@/views/auth/AuthView.vue'
 const router = createRouter({
   history: createWebHistory(
     import.meta.env.BASE_URL),
-  routes: [
-    {
+  routes: [{
       path: '/dashboard',
       name: 'main',
       component: MainView,
@@ -66,7 +65,7 @@ const router = createRouter({
           component: () => import('../views/dashboard/MyAccount.vue'),
           name: 'myAccount',
         },
-        
+
         {
           path: 'news',
           component: () => import('../views/dashboard/News.vue'),
@@ -84,11 +83,12 @@ const router = createRouter({
         },
         {
           path: 'msg',
-          component: () => import('../views/dashboard/Home.vue'),  name: 'msg',
+          component: () => import('../views/dashboard/Home.vue'),
+          name: 'msg',
         },
         {
           path: 'favorite',
-          component: () => import('../views/dashboard/News.vue'),
+          component: () => import('../views/dashboard/Favorite.vue'),
           name: 'favorite',
         },
         {

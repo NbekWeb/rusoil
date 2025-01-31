@@ -87,6 +87,10 @@ const goItem = () => {
   }
 }
 @media only screen and (max-width: 640px) {
+  .py-6{
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
   .text-2xl{
     font-size: 20px;
     line-height: 24px;

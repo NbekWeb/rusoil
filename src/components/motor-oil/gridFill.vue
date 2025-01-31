@@ -2,21 +2,29 @@
 import Icon from "../icons/Icon.vue";
 import Count from "../usefull/Count.vue";
 import { ref } from "vue";
-const basket = ref(false);
-const like = ref(false);
 
+const props = defineProps({
+  type: {
+    type: String,
+    default: "",
+  },
+  liked: {
+    type: Boolean,
+    default: false,
+  },
+ 
+});
+
+const basket = ref(false);
+const like = ref(props.liked);
 const tobasket = () => (basket.value = !basket.value);
 const toLike = () => (like.value = !like.value);
-
-defineProps({
-  type: String,
-  default: "",
-});
 </script>
 <template>
   <div
     class="p-3 point rounded-sm bor gap-2 flex-col flex text-darkest-gray border-off-white"
-  >
+  
+ >
     <div class="relative bg-white">
       <div class="text-white absolute top-0 left-0">
         <span
@@ -100,11 +108,15 @@ img {
   border: 1px solid $color-yellow-light;
 }
 @media only screen and (max-width: 768px) {
-  .lg-hide{
+  .lg-hide {
     display: none;
   }
 }
 @media only screen and (max-width: 640px) {
+  .text-base{
+    font-size: 14px;
+    line-height: 18px;
+  }
   .truncate {
     -webkit-line-clamp: 2;
     line-clamp: 2;

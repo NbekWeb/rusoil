@@ -28,11 +28,11 @@ const goBack = () => {
     <div class="px-8 py-6">
       <link-items :links="links" />
     </div>
-    <div class="flex gap-6 px-8">
-      <div class="flex-grow">
+    <div class="grid-3 gap-6 px-8 ">
+      <div class="col-2">
         <img src="@/assets/img/aksi1.png" class="rounded-sm w-full" />
       </div>
-      <div class="min-w-500 rounded-sm flex bg-gray-50">
+      <div class="rounded-sm flex bg-gray-50 w-full  col-res">
         <div class="h-full w-full flex items-stretch">
           <div class="h-auto w-full flex flex-col">
             <div class="text-center text-xs rounded-sm warn w-full">
@@ -58,7 +58,7 @@ const goBack = () => {
         </div>
       </div>
     </div>
-    <span class="opacity-50">Опубликовано: 2 апреля 2024 </span>
+    <span class="opacity-50 px-8 mt-2 flex">Опубликовано: 2 апреля 2024 </span>
     <div class="mt-20 mb-5">
       <h2 class="text-2xl py-5 px-8 font-semibold">Новости</h2>
 
@@ -98,5 +98,64 @@ const goBack = () => {
   }
 }
 
+.col-2 {
+  grid-column: span 2;
+}
 
+@media only screen and (max-width: 1280px) {
+  .grid-5 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media only screen and (max-width: 1380px) {
+  .grid-3 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    .col-2 {
+      grid-column: span 3;
+    }
+    .col-res {
+      grid-column: span 2;
+    }
+  }
+}
+@media only screen and (max-width: 1180px) {
+  .grid-5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .grid-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    .col-2 {
+      grid-column: span 1;
+    }
+    .col-res {
+      grid-column: span 1;
+    }
+  }
+  .mt-20{
+    margin-top: 40px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .grid-5 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .py-6 {
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+  .gap-6 {
+    gap: 16px;
+  }
+  .py-6 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .mt-20 {
+    margin-top: 32px;
+  }
+  .text-base {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
 </style>

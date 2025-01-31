@@ -2,7 +2,7 @@
 import LinkItems from "@/components/usefull/LinkItems.vue";
 import Icon from "@/components/icons/Icon.vue";
 import { useRouter } from "vue-router";
-
+import pagination from "@/components/usefull/pagination.vue";
 const router = useRouter();
 const links = [
   {
@@ -55,6 +55,15 @@ const goItem = () => {
         </div>
       </div>
     </div>
+    <div class="flex items-center justify-between px-8 pt-15 pb-10">
+      <div
+        class="text-base point flex gap-2 sm-full items-center inp border rounded-sm px-4 py-3"
+      >
+        Показать ещё
+        <icon type="chevron-left" class="-rotate-90 text-2xl" />
+      </div>
+      <pagination />
+    </div>
   </div>
 </template>
 
@@ -78,5 +87,36 @@ const goItem = () => {
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .gap-6 {
+    gap: 8px;
+  }
+}
 
+@media only screen and (max-width: 768px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .pt-5 {
+    padding-top: 8px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .py-6 {
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+  .p-8 {
+    padding: 16px;
+  }
+  .pt-15{
+    flex-direction: column;
+    gap:8px;
+    .sm-full{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
 </style>
