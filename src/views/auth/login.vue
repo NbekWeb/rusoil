@@ -19,7 +19,7 @@ import { RouterLink } from "vue-router";
       >
         Войти
       </router-link>
-      <div class="mt-3 pt-4 text-center">Не помню пароль</div>
+      <div class="font-semibold pt-4 text-center">Не помню пароль</div>
     </form>
   </div>
 </template>

@@ -5,7 +5,7 @@ import Icon from "../icons/Icon.vue";
 const links = [
   {
     name: "Заказы",
-    to: "orders",
+    to: "basket",
     icon: "box",
   },
   {
@@ -19,7 +19,7 @@ const links = [
     icon: "ring",
   },
   {
-    name: "Заказы",
+    name: "Корзина",
     to: "basket",
     icon: "order",
   },
@@ -60,7 +60,7 @@ const links = [
 @import "@/assets/style/var.scss";
 
 .link {
-  width: 100px;
+  width: 92px;
   padding: 6px 0;
 
   .coin {

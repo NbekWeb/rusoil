@@ -9,14 +9,14 @@ const route = useRoute();
 <template>
   <div class="auth-wrap custom-scrollbar">
     <div class="auth-view p-6 flex gap-6 min-h-full">
-      <div class="rounded-sm bg-white py-6 px-20 login text-darkest-gray">
+      <div class="rounded-xl bg-white py-6 px-20 login text-darkest-gray">
         <div
           class="bg-off-white p-1 flex gap-0 items-center rounded-sm login-wrap"
         >
           <router-link
             :to="{ name: 'login' }"
             :class="[
-              'text-darkest-gray item font-medium rounded-sm p-2 text-base flex justify-center',
+              'text-darkest-gray item font-semibold rounded-sm p-2 text-base flex justify-center',
               route.name != 'regis' ? 'bg-white' : '',
             ]"
             >Вход
@@ -24,7 +24,7 @@ const route = useRoute();
           <router-link
             :to="{ name: 'regis' }"
             :class="[
-              'text-darkest-gray item font-medium rounded-sm p-2 text-base flex justify-center',
+              'text-darkest-gray item font-semibold rounded-sm p-2 text-base flex justify-center',
               route.name == 'regis' ? 'bg-white' : '',
             ]"
             >Регистрация

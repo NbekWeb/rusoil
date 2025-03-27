@@ -188,6 +188,8 @@ const clearSearch = () => {
   }
   .search-icon {
     left: 16px;
+    font-size: 24px;
+    color: #71717A;
   }
   .cancel-icon {
     right: 8px;

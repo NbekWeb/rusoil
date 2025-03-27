@@ -56,6 +56,10 @@ a {
     border-radius: 12px;
 }
 
+.rounded-xl {
+    border-radius: 24px;
+}
+
 .rounded-t-sm {
     border-radius: 12px 12px 0 0;
 }
@@ -85,12 +89,19 @@ a {
     width: 100%;
 }
 
+
+
 input {
     border-radius: 12px;
-    border: 2px solid $color-gray-light;
+    border: 1px solid #E4E4E7;
     outline: none;
     font-size: 16px;
     line-height: 24px;
+
+    &::placeholder {
+        color: $color-gray-light;
+        opacity: 1;
+    }
 
     &:hover,
     &:focus {
@@ -211,6 +222,10 @@ input {
 }
 
 @media only screen and (max-width: 640px) {
+    .rounded-xl {
+        border-radius: 12px;
+    }
+
     .px-8 {
         padding-left: 16px;
         padding-right: 16px;
@@ -259,17 +274,17 @@ input {
 
 .overflow-x-auto {
     overflow-x: auto;
-    
+
 }
 
-.min-w-max{
+.min-w-max {
     min-width: max-content;
 }
 
-.max-w-max{
+.max-w-max {
     max-width: max-content;
 }
 
-.underline{
+.underline {
     text-decoration: underline;
 }
